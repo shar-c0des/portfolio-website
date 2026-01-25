@@ -421,9 +421,9 @@ const Portfolio = () => {
           >
             <button 
               onClick={() => setSelectedProject(null)}
-              className="fixed top-8 right-8 text-zinc-500 hover:text-white transition-colors p-4"
+              className="fixed top-4 right-4 md:top-8 md:right-8 z-[110] text-zinc-500 hover:text-white transition-all duration-300 p-3 md:p-4 bg-black/60 hover:bg-black/80 rounded-full backdrop-blur-sm border border-white/10 hover:border-white/20 min-w-[44px] min-h-[44px] flex items-center justify-center"
             >
-              <X size={32} />
+              <X size={20} className="md:w-8 md:h-8" />
             </button>
             
             <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
