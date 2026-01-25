@@ -13,7 +13,7 @@ export default defineConfig({
     
     }),
   ],
-  base: process.env.NODE_ENV === 'production' ? '/portfolio-website/' : '/',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
