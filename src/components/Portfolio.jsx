@@ -13,9 +13,7 @@ import {
   Code2,
   Globe, 
   Clock, 
-  Compass,
-  FileText,
-  PenTool
+  Compass
 } from 'lucide-react';
 
 import meImg from '../assets/me_mario.jpeg';
@@ -147,10 +145,6 @@ const Portfolio = () => {
           </div>
           
           <div className="flex space-x-10 text-[11px] font-medium tracking-widest text-zinc-400 uppercase">
-            <Link to="/blog" className="hover:text-white transition-colors duration-300 flex items-center space-x-1">
-              <PenTool size={12} />
-              <span>Blog</span>
-            </Link>
             {['Work', 'About', 'Resume', 'Contact'].map((item) => {
               if (item === 'Resume') {
                 return (
@@ -159,10 +153,9 @@ const Portfolio = () => {
                     href="/resume.pdf" 
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-white transition-colors duration-300 flex items-center space-x-1"
+                    className="hover:text-white transition-colors duration-300"
                   >
-                    <span>{item}</span>
-                    <FileText size={12} />
+                    {item}
                   </a>
                 );
               }
@@ -441,6 +434,16 @@ const Portfolio = () => {
                     muted
                     loop
                     playsInline
+                    poster={selectedProject.image}
+                    onError={(e) => {
+                      console.error('Video error:', e);
+                      // Fallback to image if video fails to load
+                      e.target.style.display = 'none';
+                      const img = document.createElement('img');
+                      img.src = selectedProject.image;
+                      img.className = 'w-full h-full object-cover';
+                      e.target.parentElement.appendChild(img);
+                    }}
                   />
                 ) : (
                   <img src={selectedProject.image} className="w-full h-full object-cover" alt="" />
