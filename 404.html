@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    var segment_count = 1;
+    var language = navigator.language || navigator.userLanguage;
+    var dir = language == 'ar' ? 'rtl' : 'ltr';
+    document.write('<meta http-equiv="refresh" content="0;url=/' + window.location.pathname.split('/').slice(segment_count).join('/') + '">');
+  </script>
+</head>
+<body>
+  <script>
+    var path = window.location.pathname.split('/').slice(1).join('/');
+    window.location.href = '/' + path;
+  </script>
+</body>
+</html>
