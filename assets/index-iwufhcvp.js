@@ -34,11 +34,18 @@ Please change the parent <Route path="${e}"> to <Route path="${e===`/`?`*`:`${e}
 
         /* Typography utilities */
         .text-hero {
-          font-size: clamp(4rem, 20vw, 12rem);
+          font-size: clamp(2.5rem, 15vw, 12rem);
           font-weight: 900;
           text-transform: uppercase;
-          line-height: 0.75;
+          line-height: 0.8;
           letter-spacing: -0.05em;
+        }
+        
+        @media (max-width: 640px) {
+          .text-hero {
+            font-size: clamp(2rem, 18vw, 8rem);
+            line-height: 0.85;
+          }
         }
 
         .text-serif-large {
